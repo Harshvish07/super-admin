@@ -1,75 +1,3 @@
-// import React from "react";
-// import { Bar, Doughnut } from "react-chartjs-2";
-// import {
-//   Chart as ChartJS,
-//   BarElement,
-//   CategoryScale,
-//   LinearScale,
-//   Tooltip,
-//   Legend,
-//   ArcElement
-// } from "chart.js";
-
-// // Import data from JSON file
-// import dashboardData from "../data/dashboardEmplyee.json";
-
-// ChartJS.register(
-//   BarElement,
-//   CategoryScale,
-//   LinearScale,
-//   Tooltip,
-//   Legend,
-//   ArcElement
-// );
-
-// const AnalyticsDashboard = () => {
-//   return (
-//     <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-//       {/* Analytics (Bar Chart) */}
-//       <div className="bg-white w-150 h-100  p-6 rounded-lg shadow-md">
-//         <h3 className="text-lg font-semibold mb-4">Analytics</h3>
-//         <Bar data={dashboardData.barChartData} />
-//         <div className="flex justify-center gap-6 mt-4">
-//           <div className="text-center">
-//             <span className="block text-purple-700 font-bold text-xl">
-//               {dashboardData.summary.jobsPosted}
-//             </span>
-//             <span className="text-gray-600">Job Posted</span>
-//           </div>
-//           <div className="text-center">
-//             <span className="block text-purple-400 font-bold text-xl">
-//               {dashboardData.summary.candidates}
-//             </span>
-//             <span className="text-gray-600">Candidate</span>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Overview (Doughnut Chart) */}
-//       <div className="bg-white p-6 w-150 h-100  rounded-lg shadow-md">
-//         <h3 className=" text-lg font-semibold mb-4">Overview</h3>
-//         <Doughnut data={dashboardData.doughnutChartData} />
-//         <div className="mt-4">
-//           <div className="flex justify-between items-center text-blue-500">
-//             <span>Active Accounts</span>
-//             <span>{dashboardData.doughnutChartData.datasets[0].data[0]}</span>
-//           </div>
-//           <div className="flex justify-between items-center text-red-500">
-//             <span>Deactivated Accounts</span>
-//             <span>{dashboardData.doughnutChartData.datasets[0].data[1]}</span>
-//           </div>
-//           <div className="flex justify-between items-center text-yellow-500">
-//             <span>Verification Pending</span>
-//             <span>{dashboardData.doughnutChartData.datasets[0].data[2]}</span>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AnalyticsDashboard;
-
 import React from "react";
 import { Bar, Doughnut } from "react-chartjs-2";
 import {
@@ -77,6 +5,7 @@ import {
   BarElement,
   CategoryScale,
   LinearScale,
+  LineController,
   Tooltip,
   Legend,
   ArcElement

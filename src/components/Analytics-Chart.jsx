@@ -6,6 +6,7 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  LineController,
   Tooltip,
   Legend
 } from "chart.js";
