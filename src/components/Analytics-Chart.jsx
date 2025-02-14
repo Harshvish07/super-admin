@@ -6,19 +6,21 @@ import {
   LinearScale,
   PointElement,
   LineElement,
-  LineController,
+  LineController, // ✅ Correctly registered
   Tooltip,
   Legend
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import dashgraphdata from "../data/dashgraphdata.json";
 
+// ✅ Register all required components
 ChartJS.register(
   BarElement,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
+  LineController,
   Tooltip,
   Legend
 );
@@ -40,7 +42,7 @@ const AnalyticsChart = () => {
   const filteredData = dashgraphdata.filter(
     (data) =>
       (selectedMonth === "All" || data.label === selectedMonth) &&
-      data.category.includes(selectedCategory) // Fix: Check if category array contains selectedCategory
+      data.category.includes(selectedCategory) // ✅ Fixed: Check if category array contains selectedCategory
   );
 
   useEffect(() => {
@@ -68,7 +70,7 @@ const AnalyticsChart = () => {
         barThickness: 50
       },
       {
-        type: "line",
+        type: "line", // ✅ Fixed: Correct type
         label: "Trend",
         data: filteredData.map((data) => data.value),
         borderColor: "#A46F4D",

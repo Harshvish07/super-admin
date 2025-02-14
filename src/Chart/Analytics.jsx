@@ -15,6 +15,7 @@ import dashboardData from "../data/dashboardEmplyee.json";
 ChartJS.register(
   BarElement,
   CategoryScale,
+  LineController,
   LinearScale,
   Tooltip,
   Legend,
