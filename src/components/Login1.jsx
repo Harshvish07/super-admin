@@ -115,7 +115,7 @@ export default function Login1() {
   return (
     <div className="sm:auto flex w-screen bg-white justify-center h-screen">
       {/* Left Side (Hidden on Small Screens) */}
-      <div className="hidden sm:flex w-5/9 bg-[url(page1background.svg)] bg-contain bg-no-repeat leftbox items-center">
+      <div className="hidden sm:flex w-5/9 bg-[url('/page1background.svg')] bg-contain bg-no-repeat leftbox items-center">
         <img className="pl-10 w-5/10" src="page1lefticon.svg" alt="Left Icon" />
       </div>
 
