@@ -2,8 +2,12 @@ import React from "react";
 export default function Login4() {
   return (
     <div className=" sm:auto flex auto  bg-white justify-center w-screen h-screen ">
-      <div className=" justify-start items-center hidden sm:flex w-5/9 bg-[url(page1background.svg)]  bg-contain bg-no-repeat leftbox">
-        <img className="pl-10 w-9/20 lg:w-4/10 md:w-7/10 " src="page4lefticon.svg" alt="" />
+      <div className=" justify-start items-center hidden sm:flex w-5/9 bg-[url('/page1background.svg')]  bg-contain bg-no-repeat leftbox">
+        <img
+          className="pl-10 w-9/20 lg:w-4/10 md:w-7/10 "
+          src="page4lefticon.svg"
+          alt=""
+        />
       </div>
       <div className=" flex flex-col gap-9 justify-center items-center w-full sm:w-4/9 ">
         <img className="w-20 h-20" src="page4righticon.svg" alt="" />

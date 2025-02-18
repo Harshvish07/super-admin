@@ -7,7 +7,7 @@ export default function Login2() {
   };
   return (
     <div className=" sm:auto flex  bg-white justify-center w-screen h-screen  ">
-      <div className=" justify-start items-center hidden sm:flex w-5/9 bg-[url(page1background.svg)]  bg-contain bg-no-repeat leftbox">
+      <div className=" justify-start items-center hidden sm:flex w-5/9 bg-[url('/page1background.svg')]  bg-contain bg-no-repeat leftbox">
         <img className="pl-10 w-5/10 " src="page2lefticon.svg" alt="" />
       </div>
       <div className=" flex flex-col gap-15 justify-start lg:justify-center items-center w-full sm:w-4/9  mt-25 lg:mt-0">
