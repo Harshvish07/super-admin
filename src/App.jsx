@@ -1,50 +1,45 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Sidebar from "./components/Side-bar";
-// import Dashboard from "./components/Dashboard";
-// import SearchBar from "./components/Search-Bar";
-
-// export default function App() {
-//   return (
-//     <Router>
-//       <div className="flex min-h-screen  bg-gray-100">
-//         <Sidebar />
-
-//         <main className="flex-1 pt-1">
-//           <SearchBar />
-//           <Routes>
-//             <Route path="/" element={<Dashboard />} />
-//           </Routes>
-//         </main>
-//       </div>
-//     </Router>
-//   );
-// }
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Side-bar";
-import Dashboard from "./components/Dashboard";
-import SearchBar from "./components/Search-Bar";
-import EmployerPage from "./components/EmployerPage";
-import CandidatePage from "./components/CandidatePage";
-import JobsPage from "./components/JobsPage";
-import RevenuePage from "./components/RevenuePage";
+
+import Login1 from "./components/Login1";
+import Login2 from "./components/Login2";
+import Login3 from "./components/Login3";
+import Login4 from "./components/Login4";
+import DashboardLayout from "./DashboardLayout";
+import Signup1 from "./components/Signup1";
+import VerifyAccount from "./components/VerifyAccount";
+import EmailOTPVerification from "./components/EmailOTPVerification";
+import EmailSucessVerify from "./components/EmailSucessVerify";
+import PhoneOtpverification from "./components/PhoneOTPVerification";
+import PhoneVerifiedSuccess from "./components/PhoneVerifiedSuccess";
 
 export default function App() {
   return (
     <Router>
-      <div className="flex min-h-screen bg-gray-100">
-        <Sidebar />
-        <main className="flex-1 pt-1">
-          <SearchBar />
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/view-employer" element={<EmployerPage />} />
-            <Route path="/view-candidate" element={<CandidatePage />} />
-            <Route path="/view-jobs-posted" element={<JobsPage />} />
-            <Route path="/view-revenue" element={<RevenuePage />} />
-          </Routes>
-        </main>
-      </div>
+      <Routes>
+        {/* Public Routes (Authentication) */}
+        <Route path="/" element={<Login1 />} />
+        <Route path="/forgot-password" element={<Login2 />} />
+        <Route path="/reset-password" element={<Login3 />} />
+        <Route path="/password-reset-success" element={<Login4 />} />
+        <Route path="/Signup1" element={<Signup1 />} />
+        <Route path="/VerifyAccount" element={<VerifyAccount />} />
+        <Route
+          path="/EmailOTPVerification"
+          element={<EmailOTPVerification />}
+        />
+        <Route path="/EmailSucessVerify" element={<EmailSucessVerify />} />
+        <Route
+          path="/PhoneOtpverification"
+          element={<PhoneOtpverification />}
+        />
+        <Route
+          path="/PhoneVerifiedSuccess"
+          element={<PhoneVerifiedSuccess />}
+        />
+
+        {/* Protected Routes (Dashboard) */}
+        <Route path="/*" element={<DashboardLayout />} />
+      </Routes>
     </Router>
   );
 }

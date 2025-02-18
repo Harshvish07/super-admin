@@ -1,4 +1,5 @@
 import Icon from "../assets/Icon.svg";
+import { Link } from "react-router-dom";
 import { MdDashboard, MdOutlineMonetizationOn } from "react-icons/md";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
@@ -51,15 +52,17 @@ const Sidebar = () => {
         <img className="w-3 " src="sidebartop1.svg" alt="" />
         <p className="text-white font-semibold text-[15px] ">Dashboard</p>
       </div>
-      <li className="w-full flex justify-start px-3 gap-2 items-center">
-        <img className="w-4 " src="sidebartop2.svg" alt="" />
-        <a
-          href="/"
+      <li className="w-full flex items-center gap-2 px-3">
+        <img className="w-4" src="sidebartop2.svg" alt="Job Management Icon" />
+        <Link
+          to="/alljobs-post"
           className="font-urbanist font-semibold text-white text-[15px]"
+          aria-label="Job Post Management"
         >
           Job Post Management
-        </a>
+        </Link>
       </li>
+
       <li className="w-full flex justify-start px-3 gap-2 items-center">
         <img className="w-4 " src="sidebartop3.svg" alt="" />
         <a
