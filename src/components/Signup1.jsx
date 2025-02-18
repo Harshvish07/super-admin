@@ -277,7 +277,7 @@ export default function Signup1() {
         </div>
       </div>
 
-      <div className=" justify-end items-center hidden sm:flex w-5/9 bg-[url(Signup1background.svg)]  bg-contain bg-right bg-no-repeat leftbox">
+      <div className=" justify-end items-center hidden sm:flex w-5/9 bg-[url('/Signup1background.svg')]  bg-contain bg-right bg-no-repeat leftbox">
         <img className="pl-10 w-5/11  " src="Signup1righticon.svg" alt="" />
       </div>
     </div>
