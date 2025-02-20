@@ -13,6 +13,7 @@ import SubscriptionManagementEdit from "./components/SubscriptionManagementEdit"
 import Candidate from "./components/Candidate";
 import CandidateProfile from "./components/CanditateProfile";
 import VerficationCandidate from "./components/VerficationCandidate";
+import Employee from "./components/Employee";
 
 function DashboardLayout() {
   return (
@@ -39,6 +40,7 @@ function DashboardLayout() {
             path="/VerificationCandiate"
             element={<VerficationCandidate />}
           />
+          <Route path="/employee" element={<Employee />} />
         </Routes>
       </main>
     </div>

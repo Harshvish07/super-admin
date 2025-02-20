@@ -134,7 +134,9 @@ const Sidebar = () => {
           icon={<MdPostAdd />}
           text="Job Post Management"
           active={activeTab === "Job Post Management"}
-          onClick={() => handleNavigation("Job Post Managemt", "/alljobs-post")}
+          onClick={() =>
+            handleNavigation("Job Post Management", "/alljobs-post")
+          }
         />
         <NavItem
           icon={<RiMoneyDollarCircleLine />}
@@ -157,7 +159,7 @@ const Sidebar = () => {
           icon={<BsPersonSquare />}
           text="Employer Management"
           active={activeTab === "Employer Management"}
-          onClick={() => handleNavigation("Employer Management", "/employers")}
+          onClick={() => handleNavigation("Employer Management", "/employee")}
         />
         <NavItem
           icon={<MdPersonSearch />}

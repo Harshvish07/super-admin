@@ -131,231 +131,191 @@ export default function CandidatePage() {
   };
 
   return (
-    <div className="h-screen w-screen flex justify-center bg-gray-200 ">
-      <div className="flex flex-col w-4/5 h-full bg-[#F0F0F0]">
-        <div className="flex justify-between items-center p-3 shadow-md w-full h-15 bg-white">
-          <div className="relative">
+    <div className="p-4">
+      <div className="flex flex-col w-full h-full mb-5 bg-[#F0F0F0]">
+        <p className="font-urbanist text-lg font-medium">Hello! TechnoHire</p>
+        <p className="font-inter text-xl font-semibold">
+          Dashboard - Candidate
+        </p>
+        <div className="flex gap-3">
+          <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow bg-white shadow-md rounded-lg">
+            <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
+              New Candidate
+            </p>
+            <p className="text-xl font-nunito-sans font-semibold mb-2">
+              {newcandidate}
+            </p>
+            <span className=" items-center w flex gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
+              <img
+                className="h-5 w-5"
+                src={
+                  newcandidateper > 0 ? "trendingup.svg" : "trendingdown.svg"
+                }
+                alt=""
+              />
+              <span
+                style={{
+                  fontSize: "13px",
+                  color: newcandidateper >= 0 ? "#00B69B" : "red"
+                }}
+              >
+                {newcandidateper > 0 ? newcandidateper : -1 * newcandidateper}%
+              </span>{" "}
+              {newcandidateper >= 0 ? "Up till now" : "Down from yesterday"}
+            </span>
             <img
-              className="absolute top-[50%] translate-y-[-50%] left-3"
-              src="magnifyglass.svg"
+              className="absolute h-11 w-11 top-3 right-3"
+              src="dashboard3left1.svg"
               alt=""
             />
-            <input
-              className="font-roboto text-sm border-1 border-gray-300 outline-none rounded-lg w-80 h-9 px-9"
-              type="text"
-              placeholder="Search Anything"
-              onChange={(e) => setSearchtext(e.target.value)}
-              value={searchtext}
+          </div>
+          <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow  bg-white shadow-md rounded-lg">
+            <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
+              Total Candidate
+            </p>
+            <p className="text-xl font-nunito-sans font-semibold mb-2">
+              {totalcandidate}
+            </p>
+            <span className=" items-center flex gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
+              <img
+                className="h-5 w-5"
+                src={
+                  totalcandidateper > 0 ? "trendingup.svg" : "trendingdown.svg"
+                }
+                alt=""
+              />
+              <span
+                style={{
+                  fontSize: "13px",
+                  color: totalcandidateper >= 0 ? "#00B69B" : "red"
+                }}
+              >
+                {totalcandidateper > 0
+                  ? totalcandidateper
+                  : -1 * totalcandidateper}
+                %
+              </span>
+              Last updated on 12PM
+            </span>
+            <img
+              className="absolute h-11 w-11 top-3 right-3"
+              src="dashboard3left2.svg"
+              alt=""
             />
           </div>
-          <span className="flex gap-5">
-            <Switch />
-            <Comment />
-            <Bellicon number={notification} />
-            <img className="w-9 h-9 rounded-[50%] " src="logo.svg" alt="" />
-          </span>
-        </div>
-        <div className="w-full flex flex-col justify-between flex-grow p-3">
-          <p className="font-urbanist text-lg font-medium">Hello! TechnoHire</p>
-          <p className="font-inter text-xl font-semibold">
-            Dashboard - Candidate
-          </p>
-          <div className="flex gap-3">
-            <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow bg-white shadow-md rounded-lg">
-              <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
-                New Candidate
-              </p>
-              <p className="text-xl font-nunito-sans font-semibold mb-2">
-                {newcandidate}
-              </p>
-              <span className=" items-center w flex gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
-                <img
-                  className="h-5 w-5"
-                  src={
-                    newcandidateper > 0 ? "trendingup.svg" : "trendingdown.svg"
-                  }
-                  alt=""
-                />
-                <span
-                  style={{
-                    fontSize: "13px",
-                    color: newcandidateper >= 0 ? "#00B69B" : "red"
-                  }}
-                >
-                  {newcandidateper > 0 ? newcandidateper : -1 * newcandidateper}
-                  %
-                </span>{" "}
-                {newcandidateper >= 0 ? "Up till now" : "Down from yesterday"}
-              </span>
+          <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow  bg-white shadow-md rounded-lg">
+            <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
+              Active Candidate
+            </p>
+            <p className="text-xl font-nunito-sans font-semibold mb-2">
+              {activecandidate}
+            </p>
+            <span className=" items-center flex gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
               <img
-                className="absolute h-11 w-11 top-3 right-3"
-                src="dashboard3left1.svg"
+                className="h-5 w-5"
+                src={
+                  activecandidateper > 0 ? "trendingup.svg" : "trendingdown.svg"
+                }
                 alt=""
               />
-            </div>
-            <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow  bg-white shadow-md rounded-lg">
-              <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
-                Total Candidate
-              </p>
-              <p className="text-xl font-nunito-sans font-semibold mb-2">
-                {totalcandidate}
-              </p>
-              <span className=" items-center flex gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
-                <img
-                  className="h-5 w-5"
-                  src={
-                    totalcandidateper > 0
-                      ? "trendingup.svg"
-                      : "trendingdown.svg"
-                  }
-                  alt=""
-                />
-                <span
-                  style={{
-                    fontSize: "13px",
-                    color: totalcandidateper >= 0 ? "#00B69B" : "red"
-                  }}
-                >
-                  {totalcandidateper > 0
-                    ? totalcandidateper
-                    : -1 * totalcandidateper}
-                  %
-                </span>
-                Last updated on 12PM
-              </span>
-              <img
-                className="absolute h-11 w-11 top-3 right-3"
-                src="dashboard3left2.svg"
-                alt=""
-              />
-            </div>
-            <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow  bg-white shadow-md rounded-lg">
-              <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
-                Active Candidate
-              </p>
-              <p className="text-xl font-nunito-sans font-semibold mb-2">
-                {activecandidate}
-              </p>
-              <span className=" items-center flex gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
-                <img
-                  className="h-5 w-5"
-                  src={
-                    activecandidateper > 0
-                      ? "trendingup.svg"
-                      : "trendingdown.svg"
-                  }
-                  alt=""
-                />
-                <span
-                  style={{
-                    fontSize: "13px",
-                    color: activecandidateper >= 0 ? "#00B69B" : "red"
-                  }}
-                >
-                  {activecandidateper > 0
-                    ? activecandidateper
-                    : -1 * activecandidateper}
-                  %
-                </span>{" "}
-                Last 24 Hours
-              </span>
-              <img
-                className="absolute h-11 w-11 top-3 right-3"
-                src="dashboard3left3.svg"
-                alt=""
-              />
-            </div>
-            <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow  bg-white shadow-md rounded-lg">
-              <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
-                Candidate Hired
-              </p>
-              <p className="text-xl font-nunito-sans font-semibold mb-2">
-                {candidatehired}
-              </p>
-              <span className="flex items-center gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
-                <img
-                  className="h-5 w-5"
-                  src={
-                    candidatehiredper > 0
-                      ? "trendingup.svg"
-                      : "trendingdown.svg"
-                  }
-                  alt=""
-                />
-                <span
-                  style={{
-                    fontSize: "13px",
-                    color: candidatehiredper >= 0 ? "#00B69B" : "red"
-                  }}
-                >
-                  {candidatehiredper > 0
-                    ? candidatehiredper
-                    : -1 * candidatehiredper}
-                  %
-                </span>{" "}
-                {candidatehiredper >= 0 ? "Up till now" : "Down from yesterday"}
-              </span>
-              <img
-                className="absolute h-11 w-11 top-3 right-3"
-                src="dashboard3left4.svg"
-                alt=""
-              />
-            </div>
+              <span
+                style={{
+                  fontSize: "13px",
+                  color: activecandidateper >= 0 ? "#00B69B" : "red"
+                }}
+              >
+                {activecandidateper > 0
+                  ? activecandidateper
+                  : -1 * activecandidateper}
+                %
+              </span>{" "}
+              Last 24 Hours
+            </span>
+            <img
+              className="absolute h-11 w-11 top-3 right-3"
+              src="dashboard3left3.svg"
+              alt=""
+            />
           </div>
-          <div className="flex w-full gap-3">
-            <div className="p-7 relative gap-5 flex-grow w-1/2 flex flex-col justify-center items-center bg-white shadow-md rounded-lg aspect-1/1 lg:aspect-auto">
-              <p className=" absolute font-medium top-1 left-2 text-gray-500">
-                Analytics
-              </p>
-              <Bar
-                className=" mt-0 lg:mt-3 shadow-[0_0_20px_rgba(0,0,0,0.4)]"
-                data={barchartdata}
-                options={barchartoptions}
+          <div className="relative w-1/5 p-2 h-25 flex flex-col justify-between flex-grow  bg-white shadow-md rounded-lg">
+            <p className="font-nunito-sans font-medium text-gray-500 text-[12px]">
+              Candidate Hired
+            </p>
+            <p className="text-xl font-nunito-sans font-semibold mb-2">
+              {candidatehired}
+            </p>
+            <span className="flex items-center gap-1 font-nunito-sans font-medium text-gray-500  m-0 text-[10px]">
+              <img
+                className="h-5 w-5"
+                src={
+                  candidatehiredper > 0 ? "trendingup.svg" : "trendingdown.svg"
+                }
+                alt=""
               />
-              <div className="w-full mb-[-12px] flex justify-center gap-14">
-                <div className="flex flex-col items-center">
-                  <p className="text-gray-400 flex text-[13px] gap-3 items-center">
-                    <span className="w-2 h-2 rounded-[4px] bg-[#59147E]">
-                      .
-                    </span>
-                    Job Posted
-                  </p>
-                  <p className="text-3xl text-[#59147E]">{jobposted}</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <p className="text-gray-400 flex text-[13px] gap-3 items-center">
-                    <span className="w-2 h-2 rounded-[4px] bg-[#7F79C9]">
-                      .
-                    </span>
-                    Candidate
-                  </p>
-                  <p className="text-3xl text-[#7F79C9]">{candidate}</p>
-                </div>
+              <span
+                style={{
+                  fontSize: "13px",
+                  color: candidatehiredper >= 0 ? "#00B69B" : "red"
+                }}
+              >
+                {candidatehiredper > 0
+                  ? candidatehiredper
+                  : -1 * candidatehiredper}
+                %
+              </span>{" "}
+              {candidatehiredper >= 0 ? "Up till now" : "Down from yesterday"}
+            </span>
+            <img
+              className="absolute h-11 w-11 top-3 right-3"
+              src="dashboard3left4.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="flex w-full gap-3">
+          <div className="p-7 relative gap-5 flex-grow mt-10 mb-0 w-1/2 flex flex-col justify-center items-center bg-white shadow-md rounded-lg aspect-1/1 lg:aspect-auto">
+            <p className=" absolute font-medium top-1 left-2 text-gray-500">
+              Analytics
+            </p>
+            <Bar
+              className=" mt-0 lg:mt-3 shadow-[0_0_20px_rgba(0,0,0,0.4)]"
+              data={barchartdata}
+              options={barchartoptions}
+            />
+            <div className="w-full mb-[-12px] flex justify-center gap-14">
+              <div className="flex flex-col items-center">
+                <p className="text-gray-400 flex text-[13px] gap-3 items-center">
+                  <span className="w-2 h-2 rounded-[4px] bg-[#59147E]">.</span>
+                  Job Posted
+                </p>
+                <p className="text-3xl text-[#59147E]">{jobposted}</p>
               </div>
-            </div>
-            <div className="flex-grow relative flex justify-center items-center w-1/2 bg-white shadow-md rounded-lg aspect-1">
-              <p className="absolute font-medium top-1 left-2 text-gray-500">
-                Overview
-              </p>
-              <div className="w-2/5 flex gap-5 justify-center flex-col items-center ">
-                <Doughnut
-                  className="drop-shadow-lg"
-                  data={piechartdata}
-                  options={piechartoptions}
-                />
-                <Databar
-                  data={piechartdataArr}
-                  label={piechartlabel}
-                  color={piechartdata.datasets[0].backgroundColor}
-                />
+              <div className="flex flex-col items-center">
+                <p className="text-gray-400 flex text-[13px] gap-3 items-center">
+                  <span className="w-2 h-2 rounded-[4px] bg-[#7F79C9]">.</span>
+                  Candidate
+                </p>
+                <p className="text-3xl text-[#7F79C9]">{candidate}</p>
               </div>
             </div>
           </div>
-        </div>
-        <div className="w-full h-9 bg-white flex items-center px-5">
-          <p className="text-[#000000A1] text-[10px]">
-            Copyright © 2024 TechnoHire. All rights reserved.
-          </p>
+          <div className="flex-grow relative mt-10 mb-0 flex justify-center items-center w-1/2 bg-white shadow-md rounded-lg aspect-1">
+            <p className="absolute font-medium top-1 left-2 text-gray-500">
+              Overview
+            </p>
+            <div className="w-2/5 flex gap-5 justify-center flex-col items-center ">
+              <Doughnut
+                className="drop-shadow-lg"
+                data={piechartdata}
+                options={piechartoptions}
+              />
+              <Databar
+                data={piechartdataArr}
+                label={piechartlabel}
+                color={piechartdata.datasets[0].backgroundColor}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
